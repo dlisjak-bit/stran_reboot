@@ -43,13 +43,13 @@ function wait(ms)
 
 function bringpage(site){
     if(site=="astronomija"){
-        window.location = '/quK7@5Dy.html'
+        window.location = '/stran_reboot/quK7@5Dy.html'
     }
     if(site=="domov"){
-        window.location = '/index.html'
+        window.location = '/stran_reboot/index.html'
     }
     if(site=="messier"){
-      window.location = '/astronomija/messier.html'
+      window.location = '/stran_reboot/astronomija/messier.html'
     }
     else{
         ;
