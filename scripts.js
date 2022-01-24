@@ -4,7 +4,7 @@ function BgColorWheel(){
     document.getElementById("naslovnica").style.backgroundColor = "#D93600";
 }
 
-function search(){   ;   
+function search(){   ;
     let input = document.getElementById('searchbar').value;
     input=input.toLowerCase();
     bringpage(input);
@@ -43,13 +43,15 @@ function wait(ms)
 
 function bringpage(site){
     if(site=="astronomija"){
-        window.location = 'file:///Users/dlisjak/Desktop/domnova_stran_reboot/quK7@5Dy.html'
+        window.location = '/quK7@5Dy.html'
     }
     if(site=="domov"){
-        window.location = 'file:///Users/dlisjak/Desktop/domnova_stran_reboot/index.html'
+        window.location = '/index.html'
+    }
+    if(site=="messier"){
+      window.location = '/astronomija/messier.html'
     }
     else{
         ;
     }
 }
-
