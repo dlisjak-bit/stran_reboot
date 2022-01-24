@@ -1,0 +1,85 @@
+.body {
+    font-family: fantasy;
+    display:flex;
+    }
+#bg {
+    position: fixed; 
+    top: 0; 
+    left: 0; 
+    z-index: -1;
+          
+    /* Preserve aspet ratio */
+    min-width: 100%;
+    min-height: 100%;
+      }
+
+.naslovnica {
+    padding-left: 300px;
+    padding-right: 80px;
+    padding-top: 150px;
+    text-align: center;
+    color: white; 
+    }
+
+.naslovnica h1 {
+    font-size: 30px;
+    font-family: fantasy;
+    }  
+.searchbar {
+    position: relative;
+    display: inline-flex;
+    flex-wrap:wrap;
+    width: 90%;
+    height:20px;
+    font-size:18px;
+    background-color:transparent;
+    border-radius:10px;
+    padding:5px;
+    color:white;
+}
+
+.searchwrapper{
+    text-align: center;
+    
+}
+
+.stran{
+    position: relative;
+    display: flex;
+    flex-wrap:wrap;
+    width: 90%;
+    font-family: fantasy;
+}
+
+.naslov_strani{
+    padding-top:50px;
+    padding-left:100px;
+    color: white;
+}
+
+.textarea {
+    display: block;
+    width: 100%;
+    overflow: hidden;
+    resize: both;
+    min-height: 40px;
+    line-height: 20px;
+    font-size:18px;
+    background-color:white;
+    border-radius:10px;
+    padding:5px;
+    color:black;
+}
+
+.input, .textarea {
+    border: 1px solid #ccc;
+    font-family: inherit;
+    font-size: inherit;
+    padding: 1px 6px;
+}
+.textarea {
+    word-wrap: break-word;
+    -webkit-nbsp-mode: space;
+    line-break: after-white-space;
+    -webkit-user-modify: read-write;
+}
