@@ -62,7 +62,7 @@ function nextQuestion(){
         scoreNegative +=1;
     }
     document.getElementById('score').innerHTML = scorePositive.toString() + ", " + scoreNegative.toString();
-    show_image(currentAnswer);
+    show_image(currentQuestion.correctAnswer);
     currentQuestions.splice(currentIndex, 1);
     if(currentQuestions.length>0){
         currentIndex = Math.floor(Math.random()*currentQuestions.length);
