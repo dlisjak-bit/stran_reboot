@@ -5,6 +5,7 @@ const scoreContainer = document.getElementById('score');
 const submitButton = document.getElementById('submit');
 var enterPressed = false;
 var currentQuestions;
+var wrongQuestions;
 var currentQuestion;
 var currentAnswer;
 var scoreNegative;
@@ -29,7 +30,8 @@ let input = document.getElementById('answerBar');
 
 //Start or restart quiz
 function resetQuiz(){
-    currentQuestions = []
+    currentQuestions = [];
+    wrongQuestions =[];
     for(i=0; i<questions.length; i++){
         currentQuestions.push(questions[i]);
     }
@@ -44,8 +46,32 @@ function resetQuiz(){
     quizActive = true;
 }
 
+function resetWrong(){
+  currentQuestions = [];
+  if(wrongQuestions.length>0){
+    for(i=0; i<wrongQuestions.length; i++){
+        currentQuestions.push(wrongQuestions[i]);
+      }
+    scoreNegative = 0;
+    scorePositive = 0;
+    document.getElementById('score').innerHTML = "R:" + scorePositive.toString() + " W:" + scoreNegative.toString();
+    currentIndex = Math.floor(Math.random()*currentQuestions.length);
+    console.log(currentQuestions);
+    currentQuestion = currentQuestions[currentIndex];
+    console.log(currentQuestion.question)
+    document.getElementById('quiz').innerHTML = currentQuestion.question;
+    quizActive = true;
+    document.getElementById("wrongQbutton").style.display = "none";
+  }
+  else{
+    // Congratulations redirect
+    window.location = '/stran_reboot/index.html';
+  }
+}
+
 //Check answer, go to next question
 function nextQuestion(){
+    document.getElementById("map2").style.display = "none";
     if(currentAnswer == currentQuestion.correctAnswer){
         //celeb
         /*for(i=0; i<4; i++){
@@ -60,10 +86,16 @@ function nextQuestion(){
     else{
         //doodoosound
         scoreNegative +=1;
+        wrongQuestions.push(currentQuestion)
     }
     document.getElementById('score').innerHTML = "R:" + scorePositive.toString() + " W:" + scoreNegative.toString();
     document.getElementById('prevAnswer').innerHTML = "Previous Q: " + currentQuestion.question + " - " +currentQuestion.correctAnswer;
     show_image(currentQuestion.correctAnswer);
+    if(currentQuestion.correctAnswer == "Ser"){
+      show_image("sercd")
+      document.getElementById("map2").style.display = "inline-block";
+      show_image2("sercp")
+    }
     currentQuestions.splice(currentIndex, 1);
     if(currentQuestions.length>0){
         currentIndex = Math.floor(Math.random()*currentQuestions.length);
@@ -71,8 +103,10 @@ function nextQuestion(){
         document.getElementById('quiz').innerHTML = currentQuestion.question;    }
     else{
         console.log("hej");
-        // Congratulations redirect
-        window.location = '/stran_reboot/index.html';
+        //show wrongQbutton
+        document.getElementById('quiz').innerHTML = "Fin";
+        document.getElementById("wrongQbutton").style.display = "block";
+        document.getElementById('wrongQbutton').innerHTML = "Retry Only Wrong Answers";
     }
 }
 
@@ -88,6 +122,12 @@ function show_image(constellation) {
     constellation = constellation.toUpperCase();
     source = "https://www.iau.org/static/public/constellations/gif/" + constellation + ".gif";
     document.getElementById("map").src = source;
+}
+
+function show_image2(constellation) {
+    constellation = constellation.toUpperCase();
+    source = "https://www.iau.org/static/public/constellations/gif/" + constellation + ".gif";
+    document.getElementById("map2").src = source;
 }
 
 /*ideas:
@@ -387,11 +427,11 @@ const questions = [             //build separate file? maybe not
   },
   {
       question: "M73",
-      correctAnswer: ""
+      correctAnswer: "Aqr"
   },
   {
       question: "M74",
-      correctAnswer: "Aqr"
+      correctAnswer: "Psc"
   },
   {
       question: "M75",

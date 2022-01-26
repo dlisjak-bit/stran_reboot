@@ -80,7 +80,7 @@
   padding: 4px 7px 4px 7px;
   text-decoration: none;
   position:absolute;
-  margin: 50px 100px;
+
 }
 
 .btn:hover {
@@ -115,7 +115,13 @@
 
 #map {
   height:80%;
-  display: block;
+  display: inline-block;
+  margin-left: auto;
+  margin-right: auto;
+}
+#map2 {
+  height:80%;
+  display: inline-block;
   margin-left: auto;
   margin-right: auto;
 }
@@ -129,4 +135,13 @@
     /* Preserve aspet ratio */
     min-width: 100%;
     min-height: 100%;
-      }
+}
+
+#start {
+    margin: 50px 100px;
+}
+
+#wrongQbutton {
+  display: none;
+  margin: 50px 100px 50px 213px;
+}
