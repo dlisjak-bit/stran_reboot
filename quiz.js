@@ -35,7 +35,7 @@ function resetQuiz(){
     }
     scoreNegative = 0;
     scorePositive = 0;
-    document.getElementById('score').innerHTML = scorePositive.toString() + ", " + scoreNegative.toString();
+    document.getElementById('score').innerHTML = "R:" + scorePositive.toString() + " W:" + scoreNegative.toString();
     currentIndex = Math.floor(Math.random()*currentQuestions.length);
     console.log(currentQuestions);
     currentQuestion = currentQuestions[currentIndex];
@@ -61,18 +61,18 @@ function nextQuestion(){
         //doodoosound
         scoreNegative +=1;
     }
-    document.getElementById('score').innerHTML = scorePositive.toString() + ", " + scoreNegative.toString();
+    document.getElementById('score').innerHTML = "R:" + scorePositive.toString() + " W:" + scoreNegative.toString();
+    document.getElementById('prevAnswer').innerHTML = "Previous Q: " + currentQuestion.question + " - " +currentQuestion.correctAnswer;
     show_image(currentQuestion.correctAnswer);
     currentQuestions.splice(currentIndex, 1);
     if(currentQuestions.length>0){
         currentIndex = Math.floor(Math.random()*currentQuestions.length);
         currentQuestion = currentQuestions[currentIndex];
-        document.getElementById('quiz').innerHTML = currentQuestion.question;
-    }
+        document.getElementById('quiz').innerHTML = currentQuestion.question;    }
     else{
         console.log("hej");
         // Congratulations redirect
-        window.location = 'file:///Users/dlisjak/Desktop/domnova_stran_reboot/index.html';
+        window.location = '/stran_reboot/index.html';
     }
 }
 

@@ -2,29 +2,15 @@
     font-family: fantasy;
     display:flex;
     }
-#bg {
-    position: fixed; 
-    top: 0; 
-    left: 0; 
-    z-index: -1;
-          
-    /* Preserve aspet ratio */
-    min-width: 100%;
-    min-height: 100%;
-      }
 
 .naslovnica {
-    padding-left: 300px;
-    padding-right: 80px;
-    padding-top: 150px;
+    padding: 100px 300px 100px 300px;
     text-align: center;
-    color: white; 
+    color: white;
+    font-size:30px;
+    font-family:fantasy;
     }
 
-.naslovnica h1 {
-    font-size: 30px;
-    font-family: fantasy;
-    }  
 .searchbar {
     position: relative;
     display: inline-flex;
@@ -40,7 +26,6 @@
 
 .searchwrapper{
     text-align: center;
-    
 }
 
 .stran{
@@ -80,6 +65,68 @@
 .textarea {
     word-wrap: break-word;
     -webkit-nbsp-mode: space;
-    line-break: after-white-space;
+    /*line-break: after-white-space;*/
     -webkit-user-modify: read-write;
 }
+
+.btn {
+  -webkit-border-radius: 7;
+  -moz-border-radius: 7;
+  border-radius: 7px;
+  font-family: Arial;
+  color: #ffffff;
+  font-size: 12px;
+  background: #88959e;
+  padding: 4px 7px 4px 7px;
+  text-decoration: none;
+  position:absolute;
+  margin: 50px 100px;
+}
+
+.btn:hover {
+  background: #000000;
+  text-decoration: none;
+}
+
+.buttonscore {
+  height: 150px
+
+}
+
+.slika {
+  height: 500px;
+  text-align:center;
+}
+
+#score {
+  float: right;
+  color: white;
+  font-size:20px;
+  font-family:fantasy;
+  margin: 50px 100px;
+}
+
+#prevAnswer {
+  color: white;
+  font-size:20px;
+  font-family:fantasy;
+  margin: 50px 100px;
+}
+
+#map {
+  height:80%;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+#bg {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: -1;
+
+    /* Preserve aspet ratio */
+    min-width: 100%;
+    min-height: 100%;
+      }
