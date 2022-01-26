@@ -52,6 +52,7 @@ function resetWrong(){
     for(i=0; i<wrongQuestions.length; i++){
         currentQuestions.push(wrongQuestions[i]);
       }
+    wrongQuestions = [];
     scoreNegative = 0;
     scorePositive = 0;
     document.getElementById('score').innerHTML = "R:" + scorePositive.toString() + " W:" + scoreNegative.toString();
